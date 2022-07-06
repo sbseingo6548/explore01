@@ -1,41 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".KakaoLoginActivity">
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp" />
+
+    <EditText
+        android:id="@+id/et_eamil"
+        android:layout_below="@id/tv_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"/>
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_below="@id/et_eamil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:inputType="textPassword"
+        android:layout_below="@id/tv_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"/>
 
     <LinearLayout
+        android:id="@+id/loginBtn"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="50dp"
         android:gravity="center"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/kakaoprofile"
-            android:layout_width="200dp"
-            android:layout_height="200dp"/>
+        android:background="@color/teal_200"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:clickable="true"
+        android:onClick="signIn"
+        android:layout_marginTop="350dp"
+        >
 
         <TextView
-            android:id="@+id/kakaonickname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:stateListAnimator="@null"
+            android:text="@string/signin"
+            android:textColor="#ffffff"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/registerBtn"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        android:weightSum="10"
+        android:layout_marginTop="18dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:clickable="true"
+        android:layout_below="@id/loginBtn"
+        >
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:gravity="center"
+            android:text="처음 오셨나요?"
+            android:textSize="24sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:text="@string/signup"
+            />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/kakaologinbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_below="@id/registerBtn"
         android:src="@drawable/kakao_login_large_wide"
-        android:visibility="gone"/>
-
-    <Button
-        android:id="@+id/kakaologoutbtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="로그아웃"
-        android:visibility="gone"/>
-</LinearLayout>
+        />
+</RelativeLayout>
