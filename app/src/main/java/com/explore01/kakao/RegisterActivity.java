@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private static final Pattern PASSWORD_PATTERN = Pattern.compile("^[a-zA-Z0-9!@.#$%^&*?_~]{4,16}$");
+    private static final Pattern PASSWORD_PATTERN = Pattern.compile("^[a-zA-Z0-9!@.#$%^&*?_~]{6,12}$");
     private static final Pattern NICKNAME_PATTERN = Pattern.compile("^[가-힣]{1,8}$");
 
     private FirebaseAuth firebaseAuth;
@@ -33,9 +33,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText editTextEmail;
     private EditText editTextPassword;
     private EditText editTextnickname;
-    //private TextView editTextsexs;
-    //private EditText editTextyears;
-    //private EditText editTextname;
 
     private String email = "";
     private String password = "";
@@ -52,10 +49,6 @@ public class RegisterActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.register_email);
         editTextPassword = findViewById(R.id.register_password);
         editTextnickname = findViewById(R.id.register_nickname);
-        //editTextsexs = findViewById(R.id.register_sexs);
-        //editTextyears = findViewById(R.id.register_years);
-
-
     }
 
     public void signUp(View view) {
@@ -88,7 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
             return false;
         } else if (!PASSWORD_PATTERN.matcher(password).matches()) {
-            Toast.makeText(this, "비밀번호 범위는 4~16자 입니다.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "비밀번호 범위는 6~12자 입니다.", Toast.LENGTH_SHORT).show();
             // 비밀번호 형식 불일치
             return false;
         } else {

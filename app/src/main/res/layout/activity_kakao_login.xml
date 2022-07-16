@@ -4,108 +4,155 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:animateLayoutChanges="true"
+    android:background="@drawable/splash_background"
+    tools:context=".KakaoLoginActivity">
 
-    <TextView
-        android:id="@+id/tv_email"
+    <LinearLayout
+        android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/email"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp" />
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="150dp">
 
-    <EditText
-        android:id="@+id/et_eamil"
-        android:layout_below="@id/tv_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"/>
+        <LinearLayout
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이메일(아이디)"
+                android:textColor="#527573"
+                android:fontFamily="@font/nanumsquare_otfr"
+                android:textAllCaps="true"
+                android:layout_marginBottom="3dp"
+                android:letterSpacing="-0.02"
+                android:textSize="11sp"/>
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:inputType="textEmailAddress"
+                android:textColor="#ffffff"
+                android:background="@drawable/edit_bg"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:paddingRight="15dp"
+                android:fontFamily="sans-serif"/>
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_password"
-        android:layout_below="@id/et_eamil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/password"
-
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"/>
-
-    <EditText
-        android:id="@+id/et_password"
-        android:inputType="textPassword"
-        android:layout_below="@id/tv_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"/>
+        <LinearLayout
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="패스워드"
+                android:fontFamily="@font/nanumsquare_otfr"
+                android:textColor="#527573"
+                android:textAllCaps="true"
+                android:layout_marginBottom="3dp"
+                android:letterSpacing="-0.02"
+                android:textSize="11sp"/>
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:inputType="textPassword"
+                android:textColor="#ffffff"
+                android:background="@drawable/edit_bg"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:paddingRight="15dp"
+                android:fontFamily="sans-serif"/>
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/loginBtn"
         android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
         android:gravity="center"
-        android:background="@color/teal_200"
+        android:background="#ffffff"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
         android:clickable="true"
         android:onClick="signIn"
         android:layout_marginTop="350dp"
+        android:layout_centerHorizontal="true"
         >
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="400dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_weight="8"
             android:gravity="center"
             android:stateListAnimator="@null"
             android:text="@string/signin"
-            android:textColor="#ffffff"
-            android:textSize="25dp" />
+            android:textColor="#527573"
+            android:textSize="13sp"
+            android:letterSpacing="-0.02"
+            android:textAllCaps="false"
+            android:fontFamily="@font/nanumsquare_otfb"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/registerBtn"
-        android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:background="@color/teal_200"
-        android:weightSum="10"
-        android:layout_marginTop="18dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:clickable="true"
-        android:layout_below="@id/loginBtn"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:gravity="center"
-            android:text="처음 오셨나요?"
-            android:textSize="24sp" />
-        <TextView
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:id="@+id/Rlayout2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_weight="1"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            android:text="@string/signup"
-            />
-    </LinearLayout>
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/loginBtn"
+            android:layout_centerHorizontal="true">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="비밀번호가 기억안나세요?"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/nanumsquare_otfb"
+                android:textSize="11sp"
+                android:background="#00ff0000"
+                android:textAllCaps="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="1dp"
+                android:text="|"/>
+            <Button
+                android:id="@+id/registerBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="회원 가입"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/nanumsquare_otfb"
+                android:textSize="11sp"
+                android:background="#00ff0000"
+                android:textAllCaps="true"/>
+        </LinearLayout>
+
 
     <ImageView
         android:id="@+id/kakaologinbtn"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_below="@id/registerBtn"
+        android:layout_below="@id/Rlayout2"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/kakao_login_large_wide"
         />
 </RelativeLayout>

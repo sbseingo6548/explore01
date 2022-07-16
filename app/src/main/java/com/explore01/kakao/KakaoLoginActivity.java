@@ -56,7 +56,7 @@ public class KakaoLoginActivity extends AppCompatActivity {
         /*logoutBtn = findViewById(R.id.kakaologoutbtn);
         nickName = findViewById(R.id.kakaonickname);
         profileImage = findViewById(R.id.kakaoprofile);*/
-        editTextEmail = findViewById(R.id.et_eamil);
+        editTextEmail = findViewById(R.id.et_email);
         editTextPassword = findViewById(R.id.et_password);
         /*loginBtn = findViewById(R.id.loginBtn);*/
         registerBtn = findViewById(R.id.registerBtn);
